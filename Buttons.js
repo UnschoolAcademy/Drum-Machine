@@ -30,9 +30,11 @@ shorthand: "clap"},
 fileName: "/crashes/OH_set2.wav",
 shorthand: "cymbal-3"},
 ]
+
 let buttonsJSX = buttonsArray.map(buttonObject => 
-  <div id={buttonObject.name} className = {style['drum-pad']}>{buttonObject.name}
-  <audio src={"./drum-sounds/"+buttonObject.fileName}></audio></div>);
+  <div id={buttonObject.shorthand} className = {style['drum-pad']} onClick = {handleClick}>{buttonObject.name}
+  <audio className={style.clip} id={buttonObject.name}
+  src={"./drum-sounds/"+buttonObject.fileName}></audio></div>);
 
 class Buttons extends React.Component {
   constructor(props) {
@@ -45,4 +47,10 @@ class Buttons extends React.Component {
   }
 };
 
+function handleClick(event){
+  console.log(event.target.id + " was clicked.");
+  let divName = document.getElementById(event.target.id).innerText;
+  let audioElement = document.getElementById(divName)
+  audioElement.play();
+}
 export default Buttons;
