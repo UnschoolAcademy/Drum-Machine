@@ -5,6 +5,12 @@ import Display from "./Display.js";
 import Buttons from "./Buttons.js";
 
 class DrumMachine extends React.Component {
+  handleClick(event){
+    console.log(event.target.id + " was clicked.");
+    let divName = document.getElementById(event.target.id).innerText;
+    let audioElement = document.getElementById(divName)
+    audioElement.play();
+  }
   constructor(props) {
     super(props);
   }
@@ -15,7 +21,7 @@ class DrumMachine extends React.Component {
           <div id="drum-machine" className = {style.drumMachine}>
             <Title/>
             <Display/>
-            <Buttons/> 
+            <Buttons handleClick = {this.handleClick}/> 
           </div>
       </div>
     );
