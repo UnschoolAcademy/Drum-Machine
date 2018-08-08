@@ -1,0 +1,7 @@
+.display{
+  background: green;
+  grid-area: display;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

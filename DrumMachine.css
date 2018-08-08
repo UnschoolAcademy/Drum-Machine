@@ -1,0 +1,24 @@
+.aspectRatioSizer{
+	width: 90%;
+	max-width: 410px;
+	margin: auto;
+	background: black;
+	display: grid;
+}
+.aspectRatioSizer > * {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.drumMachine{
+	width:100%;
+	height: 100%;
+  background: grey;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "title title title"
+  "display display display"
+  "buttons buttons buttons"
+  "buttons buttons buttons"
+  "buttons buttons buttons";
+}

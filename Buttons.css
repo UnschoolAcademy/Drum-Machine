@@ -1,0 +1,15 @@
+.buttons{
+	grid-area: buttons;
+	background: red;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+.drum-pad{
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	border-style: solid;
+  	border-color: black;
+  	border-width: 1px;
+}
