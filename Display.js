@@ -7,7 +7,7 @@ class Display extends React.Component {
   }
   render() {
     return (
-      <div className={style.display}>{this.props.buttonClicked}</div>
+      <div id="display"className={style.display}>{this.props.buttonClicked}</div>
     );
   }
 };
