@@ -4,10 +4,24 @@ import Title from "./Title.js";
 import Display from "./Display.js";
 import Buttons from "./Buttons.js";
 
-document.onkeydown = function(event){
-  alert(event.keyCode);
-}
 class DrumMachine extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      buttonClicked: '',
+      keycode: 0
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyPress);
+  }
+  handleKeyPress(event){
+    alert(event.keyCode);
+  }
   handleClick(event){
     let divName = document.getElementById(event.target.id).innerText;
     let audioElement = document.getElementById(divName);
@@ -15,13 +29,6 @@ class DrumMachine extends React.Component {
     this.setState({
       buttonClicked: event.target.id
     })
-  }
-  constructor(props) {
-    super(props);
-    this.state = {
-      buttonClicked: ''
-    }
-    this.handleClick = this.handleClick.bind(this);
   }
   render() {
     return (
