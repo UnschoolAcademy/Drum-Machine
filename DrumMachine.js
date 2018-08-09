@@ -13,15 +13,6 @@ class DrumMachine extends React.Component {
     }
     this.handleClick = this.handleClick.bind(this);
   }
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyPress);
-  }
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeyPress);
-  }
-  handleKeyPress(event){
-    alert(event.keyCode);
-  }
   handleClick(event){
     let divName = document.getElementById(event.target.id).innerText;
     let audioElement = document.getElementById(divName);

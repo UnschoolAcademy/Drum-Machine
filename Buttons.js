@@ -35,6 +35,15 @@ class Buttons extends React.Component {
   constructor(props) {
     super(props);
   }
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyPress);
+  }
+  handleKeyPress(event){
+    alert(event.keyCode);
+  }
   render() {
     let buttonsJSX = buttonsArray.map(buttonObject => 
       <div id={buttonObject.shorthand} className = {style['drum-pad']} onClick = {this.props.handleClick}>{buttonObject.name}
