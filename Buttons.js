@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Buttons.css';
-
+import DrumPad from './DrumPad.js';
 const buttonsArray = [
 {name: "Q",
 fileName: "/snares/brass-sd.wav",
@@ -37,9 +37,11 @@ class Buttons extends React.Component {
   }
   render() {
     let buttonsJSX = buttonsArray.map(buttonObject => 
-      <div id={buttonObject.shorthand} className = {style['drum-pad']} onClick = {this.props.handleClick}>{buttonObject.name}
-      <audio className={style.clip} id={buttonObject.name}
-      src={"./drum-sounds/"+buttonObject.fileName}></audio></div>
+      <DrumPad
+        handleClick ={this.props.handleClick}
+        name={buttonObject.name}
+        fileName={buttonObject.fileName}
+        shorthand={buttonObject.shorthand} />
     );
     return (
       <div id="buttons" className={style.buttons}>{buttonsJSX}</div>
