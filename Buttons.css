@@ -1,11 +1,11 @@
 .buttons{
 	grid-area: buttons;
-	background: red;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
 }
 .drum-pad{
+	background-color: red;
 	display: flex;
 	align-items: center;
 	justify-content: center;
