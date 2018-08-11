@@ -16,7 +16,7 @@ class DrumMachine extends React.Component {
   handleClick(event){
     let div = document.getElementById(event.target.id)
     let audioElement = document.getElementById(div.innerText);
-    div
+    div.style.
     audioElement.play();
     this.setState({
       buttonClicked: event.target.id
