@@ -13,7 +13,7 @@ class DrumPad extends React.Component {
 	}
 	handleKeyPress(event){
 	  if(event.keyCode === this.props.keyCode){
-	  	alert("keyCodes matched");
+	  	document.getElementById(this.props.shorthand).click();
 	  }
 	}
   render() {
