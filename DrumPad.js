@@ -3,6 +3,7 @@ import style from './DrumPad.css'
 class DrumPad extends React.Component {
   constructor(props) {
     super(props);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
   componentDidMount() {
 	  document.addEventListener('keydown', this.handleKeyPress);
@@ -11,7 +12,9 @@ class DrumPad extends React.Component {
 	  document.removeEventListener('keydown', this.handleKeyPress);
 	}
 	handleKeyPress(event){
-	  alert(event.keyCode);
+	  if(event.keyCode === this.props.keyCode){
+	  	alert("keyCodes matched");
+	  }
 	}
   render() {
     return (
